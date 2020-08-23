@@ -31,9 +31,34 @@ class Game extends React.Component {
             this.setState({
                 squares: squares,
                 xIsNext: !this.state.xIsNext
-            });
+            },
+                () => {
+                    console.log(this.state)
+                    // TODO: Check if the computer is supposed to take its turn
+                    if (!this.state.xIsNext) {
+                        this.takeComputerTurn(this.state.squares);
+                    }
+
+                }
+            );
         }
     }
+
+
+    async takeComputerTurn(squares) {
+        const computerMove = calculateComputerMove(squares);
+        console.log(computerMove)
+
+
+        squares[computerMove] = "O"
+        this.setState({
+            squares: squares,
+            xIsNext: true,
+        });
+
+
+    }
+
 
     restartGame() {
         this.setState({
@@ -110,7 +135,20 @@ function calculateWinner(squares) {
         }
     }
     return null;
+
 }
+
+function calculateComputerMove(squares) {
+    for (var i = 0; i < squares.length; i++) {
+        if (squares[i] == null) {
+            return i;
+        }
+    }
+
+    // If the board is completely full, don't return anything
+    return;
+}
+
 
 class App extends React.Component {
     render() {
