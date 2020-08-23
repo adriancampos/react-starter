@@ -1,50 +1,68 @@
 body {
-  font: 14px "Century Gothic", Futura, sans-serif;
-  margin: 20px;
-}
+    font: 14px "Century Gothic", Futura, sans-serif;
+    margin: 20px;
+    display: flex;
+    justify-content: center;
 
-ol, ul {
-  padding-left: 30px;
-}
+    background: rgb(2, 45, 94);
+    color: white;
 
-.board-row:after {
-  clear: both;
-  content: "";
-  display: table;
-}
-
-.status {
-  margin-bottom: 10px;
-}
-
-.square {
-  background: rgb(255, 199, 134);
-  border: 1px solid #fff;
-  float: left;
-  font-size: 24px;
-  font-weight: bold;
-  line-height: 34px;
-  height: 34px;
-  margin-right: -1px;
-  margin-top: -1px;
-  padding: 0;
-  text-align: center;
-  width: 34px;
-}
-
-.square:focus {
-  outline: none;
-}
-
-.kbd-navigation .square:focus {
-  background: #ddd;
 }
 
 .game {
-  display: flex;
-  flex-direction: row;
+
 }
 
-.game-info {
-  margin-left: 20px;
+.board {
+    margin-bottom: 30px;
+
 }
+
+.board-row:after {
+    clear: both;
+    content: "";
+    display: table;
+}
+
+.status {
+    margin-bottom: 10px;
+}
+
+.square {
+    background: rgb(255, 199, 134);
+    border: 1px solid #fff;
+    float: left;
+    font-size: 24px;
+    font-weight: bold;
+    line-height: 34px;
+    height: 34px;
+    margin-right: -1px;
+    margin-top: -1px;
+    padding: 0;
+    text-align: center;
+    width: 34px;
+}
+
+.square:focus {
+    outline: none;
+}
+
+
+.restartButton {
+    padding: 20px;
+    background: #2c0055;
+    box-shadow: 0px 0px 16px #c80de0;
+    border-radius: 20px;
+    border: none;
+}
+
+
+.restartButton span {
+    text-align: center;
+    font-size: 20px;
+    line-height: 20px;
+    margin: 0 auto;
+    background: white;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
